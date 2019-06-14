@@ -47,7 +47,7 @@ module.exports = class Grass extends LiveForm {
             matrix[newY][newX] = 1;
             var newgr = new Grass(newX, newY, 1);
             grassArr.push(newgr);
-            //this.multiply = 0;
+            this.multiply = 0;
         }
     }
 }

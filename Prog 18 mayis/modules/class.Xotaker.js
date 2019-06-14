@@ -1,4 +1,7 @@
-class Xotaker extends LivingCreature{
+var LiveForm = require("./LiveForm");
+var random = require("./random.js");
+
+module.exports = class Xotaker extends LiveForm{
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 40;
@@ -27,20 +30,25 @@ class Xotaker extends LivingCreature{
     }
     chooseCell(character) {
         this.getNewDirections()
-        var found = [];
-        for (var i in this.directions) {
-            var x = this.directions[i][0];
-            var y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == character) {
-                    found.push(this.directions[i]);
-                }
-            }
-        }
-        return found;
+        return super.chooseCell(character);
     }
+        // var found = [];
+        // for (var i in this.directions) {
+        //     var x = this.directions[i][0];
+        //     var y = this.directions[i][1];
+        //     if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
+        //         if (matrix[y][x] == character) {
+        //             found.push(this.directions[i]);
+        //         }
+        //     }
+        // }
+        // return found;
+    
     mult() {
         var empty = random(this.chooseCell(0));
+        // let emptyCells = this.chooseCell(0);
+        // let newCell = random(emptyCells);
+
         if (empty) {
             var x = empty[0]
             var y = empty[1]
@@ -99,8 +107,5 @@ class Xotaker extends LivingCreature{
                 xotakerArr.splice(i, 1);
             }
         }
-
     }
-
-
 }
