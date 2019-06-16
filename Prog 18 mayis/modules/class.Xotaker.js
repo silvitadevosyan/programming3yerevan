@@ -6,6 +6,8 @@ module.exports = class Xotaker extends LiveForm{
         super(x, y, index);
         this.energy = 40;
         this.index = 2;
+        this.multiply = 0;
+        this.directions = [];
     }
 // class Xotaker {
 //     constructor(x, y) {

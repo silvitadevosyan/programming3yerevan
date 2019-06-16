@@ -134,8 +134,7 @@ function draw() {
 
 function keyPressed() {
     if (keyCode == LEFT_ARROW) {
-        ex.left()
-        
+        ex.left()   
     } else if (keyCode == RIGHT_ARROW) {
         ex.right()
     } else if (keyCode == UP_ARROW) {
